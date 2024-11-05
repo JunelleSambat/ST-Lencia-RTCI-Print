@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+
+        <meta name="author" value="Lencia Fruit Juices Pty Ltd"/>
+        <meta name="layout" value="one-column"/>
+        <meta name="title" value=""/>
+        <meta name="output-profile" value="Acrobat7"/>
+        <meta name="creator" value="Lencia PDF Generator"/>
+
+        <macrolist>
+            <macro id="pageheader">
+
+            </macro>
+
+            <macro id="pagefooter">
+                <div align="center">
+                    <table cellpadding="0" width="100%" font-size="8pt">
+                        <tr>
+                            <td width="50%" align="left" style="border-top: 1px solid black;">
+                                <p text-align="left">{URL}</p>
+                            </td>
+                            <td width="50%" align="right" style="border-top: 1px solid black;">
+                                <p text-align="right">Page
+                                    <pagenumber class="bold"/>
+                                    of
+                                    <totalpages class="bold"/>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </macro>
+        </macrolist>
+
+        <style>
+            body {
+            footer: pageheader;
+            footer-height: 140px;
+            font-size: 10pt;
+            font-family: Helvetica;
+            width: 100%;
+            }
+            <!--    table {-->
+            <!--      table-layout: fixed;-->
+            <!--    }-->
+            table.spacing {
+            padding-bottom: 20px;
+            }
+            .bold {
+            font-weight: bold;
+            }
+            .underline {
+            text-decoration: underline;
+            }
+
+
+            td.heading {
+            font-weight: bold;
+            text-align: center;
+            }
+
+            table.itemlist th {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+            }
+
+            <!--    table.itemlist td {-->
+            <!--    border: 1px solid black;-->
+            <!--    margin: 5 px;-->
+            <!--    padding: 2px;-->
+            <!--    text-align: center;-->
+            <!--    }-->
+
+        </style>
+
+    </head>
+
+    <body size="A4">
+
+        <div style="padding-top: 0px;" align="center">
+            <p style="font-size: 18pt; font-weight: bold" align="center">PO, RCTI and Remittance Advice</p>
+        </div>
+
+        <p>Note: Please do NOT forward your own tax invoice, we will pay on this RCTI (Recipient Created Tax Invoice).</p>
+
+        <table cellpadding="0" width="100%" font-size="9pt" style="padding-top:20px; vertical-align: top;">
+            <tr>
+                <td width="25%" style="vertical-align: top;">
+                    <p>
+                        <b>From Recipient:</b>
+                    </p>
+                    <!--        <p><b>{COMPANYNAME}</b></p>-->
+                    {COMPANYADDRESS}
+                </td>
+                <td width="25%" style="vertical-align: top;">
+                    <p>
+                        <b>To Supplier:</b>
+                    </p>
+                    {BILLINGADDRESS}
+                </td>
+                <td width="30%" style="vertical-align: top;">
+                    <p>
+                        <b>Ship To:</b>
+                    </p>
+                    {SHIPTOADDRESS}
+                    <br/>
+                    <p>
+                        <b>Ship Via:</b>
+                    </p>
+                    {SHIPVIA}
+                    <br/>
+                </td>
+                <td width="20%" style="vertical-align: top;">
+                    <table cellpadding="0" width="100%">
+                        <tr>
+                            <td align="left">Booking #:</td>
+                            <td align="right">
+                                <b>{BOOKINGNUMBER}</b>
+                            </td>
+                        </tr>
+                        <!--          <tr>-->
+                        <!--            <td align="left">PO#:/RCTI#:</td>-->
+                        <!--            <td align="right"><b>{PONUMBER}</b></td>-->
+                        <!--          </tr>-->
+                        <!--          <tr>-->
+                        <!--            <td align="left">Del. Docket #:</td>-->
+                        <!--            <td align="right"><b>{DELDOCKET}</b></td>-->
+                        <!--          </tr>-->
+                        <!--          <tr>-->
+                        <!--            <td align="left">Invoice #:</td>-->
+                        <!--            <td align="right"><b>{AGNTBILLNUM}</b></td>-->
+                        <!--          </tr>-->
+                        <tr>
+                            <td align="left">Date:</td>
+                            <td align="right">
+                                <b>{BILLDATE}</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left">Terms:</td>
+                            <td align="right" style="white-space: nowrap;">
+                                <b>{TERMS}</b>
+                            </td>
+                        </tr>
+                        <!--          <tr>-->
+                        <!--            <td align="left">Date Due:</td>-->
+                        <!--            <td align="right"><b>{DUEDATE}</b></td>-->
+                        <!--          </tr>-->
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <div style="padding-top: 10px; font-size: 9pt;" align="left" width="65%">
+            <p style="font-weight: bold; padding-bottom: 0px;">Memo:</p>
+            <span style="text-align: left;">{POCOMMENTS}</span>
+        </div>
+
+        <table class="itemlist" width="100%" font-size="9pt" style="margin-top: 20px; margin-bottom:20px;">
+            <tr>
+                <th class="heading" align="center" width="25%">Item</th>
+                <th class="heading" align="center" width="10%">
+                    <p align="center">Qty</p>
+                </th>
+                <th class="heading" align="center" width="8%">Units</th>
+                <th class="heading" align="center" width="38%">Description</th>
+                <th class="heading" align="center" width="10%">Price ($)</th>
+                <th class="heading" align="center" width="10%">Tax ($)</th>
+                <th class="heading" align="center" width="13%">Amount ($)</th>
+            </tr>
+            {ITEMROWS}
+        </table>
+
+        <table cellpadding="0" width="100%" font-size="11pt" style="margin-top: 10px; ">
+            <tr>
+                <td colspan="5" align="right" style="font-weight: bold;">Sub Total $</td>
+                <td align="right" width="20%">{SUBTOTAL}</td>
+            </tr>
+            <tr>
+                <td colspan="5" align="right" style="font-weight: bold;">Tax $</td>
+                <td align="right" width="20%">{TAXTOTAL}</td>
+            </tr>
+            <tr>
+                <td colspan="5" align="right" style="font-weight: bold;">Total $</td>
+                <td align="right" width="20%">
+                    <b>{TOTALAMOUNT}</b>
+                </td>
+            </tr>
+          <tr>
+            <td colspan="6">
+
+            </td>
+          </tr>
+        </table>
+
+      <div>
+        <h4 align="center" style="padding-bottom: 10px; padding-top: 10px;">Recipient Created Tax Invoice Created By:</h4>
+        <table  padding-bottom="10" width="100%" font-size="8pt">
+          <tr>
+            <td align="center">
+              <img src="{LOGOURL}" width="245px" height="30px"/>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+
+<div>
+        <p>The GST shown will form part of the total GST payable by the supplier on the business activity statement
+            (BAS) for the relevant tax period.
+        </p>
+        <p style="font-weight: bold; margin-bottom: 0px; font-size: 9pt;">Written Agreement</p>
+        <p style="margin-top: 0px; font-size: 9pt;">The recipient and the supplier declare that this agreement relates
+            to the above supplies. The recipient will issue tax invoices in respect of these supplies. The supplier will
+            not issue tax invoices in respect of these supplies. The supplier acknowledges that it is registered for GST
+            and that it will notify the recipient if it ceases to be registered. The recipient acknowledges that it is
+            registered for GST and that it will notify the supplier if it ceases to be registered. Acceptance of this
+            recipient created tax invoice (RCTI) constitutes acceptance of the terms of this written agreement. Both
+            parties to this supply agree that they are parties to an RCTI agreement as outlined in GSTR 2000/10. The
+            supplier agrees to notify the recipient if the supplier does not wish to accept the proposed agreement.
+        </p>
+
+</div>
+    </body>
+
+</pdf>
